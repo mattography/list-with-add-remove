@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo by tkirda</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-2.0.0.js'></script>
+  
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type='text/css'>
+    
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+$(document).ready(function(){
+    $('button').click(function(){
+        var item = $('input[name=additem]').val();
+        $('ol').append('<li>'+ item +' <button id="remove">Remove</button></li>');
+    });
+    $("#remove").click(function(){
+       $(this).parent('li').remove();
+    });
+    
+   });
+
+$('#todolist').on('click', 'button', function(){
+  $(this).closest('li').remove();
+});
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <h2>Todo List</h2>
+<div id='additem'>
+    <input type='text' name='additem'/>
+    <button>Add Item</button>
+</div>
+<div id='todolist'>
+    <ol>
+    </ol>
+   <!-- Add item from "additem" input field -->
+</div>
+  
+</body>
+
+
+</html>
+
